@@ -6,9 +6,7 @@ Best used with [docker-sensu-server](https://github.com/testobject/docker-sensu-
 
 ## Instructions
 
-Assuming your Sensu server container is called "sensu-server"
-
     $ docker build -t sensuclient
-    $ docker run -d --name sensu-client --link sensu-server \
-	       sensuclient sensu-server CLIENT_NAME CLIENT_IP
+    $ docker run -d --name sensu-client \
+	       sensuclient HOST_IP CLIENT_NAME CLIENT_IP
 	     
