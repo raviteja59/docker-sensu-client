@@ -25,7 +25,7 @@ if __name__ == "__main__":
 		for line in f:
 			(name, val) = line.split(":")
 			mem[name] = val.strip()
-	available = mem['MemAvailable'].replace(" kB", "")
+	available = mem['MemFree'].replace(" kB", "")
 	total = int(mem['MemTotal'].replace(" kB", ""))
 	mem_usage = 1 - (float(available) / float(total))
 
