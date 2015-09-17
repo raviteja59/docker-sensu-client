@@ -25,12 +25,15 @@ if __name__ == "__main__":
 		for line in f:
 			(name, val) = line.split(":")
 			mem[name] = val.strip()
-	available = mem['MemFree'].replace(" kB", "")
-	total = int(mem['MemTotal'].replace(" kB", ""))
+	free = mem['MemFree'].replace(" kB", "")
+	buffers = mem['Buffers'].replace(" kB", "")
+	cached = mem['Cached'].replace(" kB", "")
+	available = int(free) + int(buffers) + int(cached)
+	total = float(mem['MemTotal'].replace(" kB", ""))
 	mem_usage = 1 - (float(available) / float(total))
 
 	if (mem_usage > critical):
-		print "mem_usage: %.2f%% of %dGB!!" % (mem_usage * 100, total / 1024 / 1024)
+		print "mem_usage: %.2f%% of %dGB!!" % (mem_usage * 100, total / (1024))
 		exit(2)
 	elif (mem_usage > warning):
 		print "mem_usage: %.2f%% of %dGB" % (mem_usage * 100, total / 1024 / 1024)
