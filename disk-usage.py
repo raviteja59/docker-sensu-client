@@ -33,4 +33,5 @@ if __name__ == "__main__":
 		print "disk_usage: %.2f%% of %dGB" % (percent * 100, total / 1024 / 1024 / 1024)
 		exit(1)
 	else:
+		print "disk_usage: %.2f%% of %dGB" % (percent * 100, total / 1024 / 1024 / 1024)
 		exit(0)

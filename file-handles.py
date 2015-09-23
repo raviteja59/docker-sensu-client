@@ -32,4 +32,5 @@ if __name__ == "__main__":
 		print "file_handles_used: %.2f%% of %d" % (percent * 100, total)
 		exit(1)
 	else:
+		print "file_handles_used: %.2f%% of %d" % (percent * 100, total)
 		exit(0)

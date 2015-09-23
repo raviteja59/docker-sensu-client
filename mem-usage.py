@@ -39,4 +39,5 @@ if __name__ == "__main__":
 		print "mem_usage: %.2f%% of %dGB" % (mem_usage * 100, total / 1024 / 1024)
 		exit(1)
 	else:
+		print "mem_usage: %.2f%% of %dGB" % (mem_usage * 100, total / 1024 / 1024)
 		exit(0)

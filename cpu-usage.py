@@ -58,4 +58,5 @@ if __name__ == "__main__":
         print "cpu_usage: %.2f%%" % (cpu_usage * 100)
         exit(1)
     else:
+        print "cpu_usage: %.2f%%" % (cpu_usage * 100)
         exit(0)
