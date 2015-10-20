@@ -1,6 +1,8 @@
 FROM hiroakis/docker-sensu-server
 
 RUN yum install python -y
+RUN yum install ntp -y
+RUN ntpd
 
 ADD supervisor.conf /etc/supervisord.conf
 ADD config.json /tmp/sensu/config.json
