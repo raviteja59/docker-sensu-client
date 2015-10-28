@@ -7,6 +7,6 @@ Best used with [docker-sensu-server](https://github.com/testobject/docker-sensu-
 ## Instructions
 
     $ docker build -t sensuclient
-    $ docker run -d --name sensu-client \
-	       sensuclient HOST_IP CLIENT_NAME CLIENT_IP
+    $ docker run -d --name sensu-client --restart=on-failure:3 \
+	       testobject/sensu-client HOST_IP CLIENT_NAME CLIENT_IP
 	     
