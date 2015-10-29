@@ -26,9 +26,10 @@ if __name__ == "__main__":
 			(name, val) = line.split(":")
 			mem[name] = val.strip()
 	free = mem['MemFree'].replace(" kB", "")
-	buffers = mem['Buffers'].replace(" kB", "")
-	cached = mem['Cached'].replace(" kB", "")
-	available = int(free) + int(buffers) + int(cached)
+	active = mem['Active(file)'].replace(" kB", "")
+	inactive = mem['Inactive(file)'].replace(" kB", "")
+	reclaimable = mem['SReclaimable'].replace(" kB", "")
+	available = int(free) + int(active) + int(inactive) + int(reclaimable)
 	total = float(mem['MemTotal'].replace(" kB", ""))
 	mem_usage = 1 - (float(available) / float(total))
 
