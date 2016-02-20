@@ -3,7 +3,7 @@
     "name": "CLIENT_NAME",
     "address": "CLIENT_IP_ADDRESS",
     "subscriptions": [
-      "docker"
+      "ALL"
     ],
     "keepalive": {
       "thresholds": {
@@ -11,7 +11,7 @@
         "critical": 120
       },
       "handlers": ["slack"],
-      "refresh": 1800
+      "refresh": 300
     } 
   }
 }
